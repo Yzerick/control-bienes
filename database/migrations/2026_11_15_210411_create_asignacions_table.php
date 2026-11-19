@@ -12,9 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('asignacions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+    $table->id();
+    $table->foreignId('bien_id')->constrained('biens')->onDelete('cascade');
+    $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
+    $table->date('fecha_entrega');
+    $table->text('observacion')->nullable();
+    $table->timestamps();
+});
+
     }
 
     /**

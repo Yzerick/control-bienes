@@ -1,5 +1,5 @@
-<a href="{{ route('usuarios.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400"><i class="fa-solid fa-user-group"></i>Usuarios</a>
-<a href="{{ route('bienes.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400"><i class="fa-solid fa-briefcase"></i> Bienes</a>
-<a href="{{ route('categorias.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400"><i class="fa-solid fa-tags"></i> Categorias</a>
-<a href="{{ route('ubicaciones.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400"><i class="fa-solid fa-location-dot"></i> Ubicaciones</a>
-<a href="{{ route('asignaciones.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400"><i class="fa-solid fa-exchange-alt"></i>Asignaciones</a>
+<a href="{{ route('usuarios.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400 rounded-2xl"><i class="fa-solid fa-user-group"></i>Usuarios</a>
+<a href="{{ route('bienes.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400 rounded-2xl"><i class="fa-solid fa-briefcase"></i> Bienes</a>
+<a href="{{ route('categorias.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400 rounded-2xl"><i class="fa-solid fa-tags"></i> Categorias</a>
+<a href="{{ route('ubicaciones.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400 rounded-2xl"><i class="fa-solid fa-location-dot"></i> Ubicaciones</a>
+<a href="{{ route('asignaciones.index') }}" class="flex items-center gap-3 px-3 py-4 hover:bg-orange-400 rounded-2xl"><i class="fa-solid fa-exchange-alt"></i>Asignaciones</a>
