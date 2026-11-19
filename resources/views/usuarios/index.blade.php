@@ -49,7 +49,7 @@
                     </button>
 
                     <!-- CONFIRMAR ELIMINAR -->
-                    <div class="fixed inset-0 bg-black/30 z-50 flex items-center justify-center " id="modal-delete-{{ $usuario->id }}">
+                    <div class="fixed inset-0 bg-black/30 z-50 hidden" id="modal-delete-{{ $usuario->id }}">
                         <div class="bg-white p-5 rounded shadow-lg max-w-sm w-full">
                             <h1 class="bg-red-500 text-white font-bold p-2 rounded">Confirmar Eliminación</h1>
                             <p class="px-2 mt-4 mb-4 text-gray-700">

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('asignacions', function (Blueprint $table) {
+      Schema::create('asignacions', function (Blueprint $table) {
     $table->id();
     $table->foreignId('bien_id')->constrained('biens')->onDelete('cascade');
     $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
@@ -19,6 +19,7 @@ return new class extends Migration
     $table->text('observacion')->nullable();
     $table->timestamps();
 });
+
 
     }
 

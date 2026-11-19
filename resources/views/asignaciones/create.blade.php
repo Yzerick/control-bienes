@@ -1,3 +1,64 @@
-<div>
-    <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
-</div>
+@extends('layouts.base')
+@section('subtitulo', 'Nueva asignación')
+@section('boton-crear')
+    <a href="{{ route('asignaciones.index') }}" class="inline-flex items-center gap-2 whitespace-nowrap shrink-0 bg-red-700 text-white px-4 py-2 rounded hover:bg-red-500">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Regresar</span>
+    </a>
+@endsection
+
+@section('contenido')
+    @if ($errors->any())
+        <div class="bg-red-500 text-white px-4 py-2 rounded mb-4">
+            @foreach ($errors->all() as $error)
+                <p>• {{ $error }}</p>
+            @endforeach
+        </div>
+    @endif
+
+    <form action="{{ route('asignaciones.store') }}" method="post" class="grid grid-cols-2 gap-4 bg-white p-6 rounded shadow">
+        @csrf
+
+        <div class="flex flex-col">
+            <label class="font-semibold text-gray-700 mb-1">Bien a Asignar *</label>
+            <select name="bien_id" required class="border border-gray-300 rounded px-2 py-1.5 bg-white focus:outline-none focus:border-cyan-600">
+                <option value="" disabled selected>Seleccione un bien...</option>
+                @foreach ($bienes as $bien)
+                    <option value="{{ $bien->id }}" {{ old('bien_id') == $bien->id ? 'selected' : '' }}>
+                        {{ $bien->codigo }} - {{ $bien->nombre }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="flex flex-col">
+            <label class="font-semibold text-gray-700 mb-1">Usuario Responsable *</label>
+            <select name="usuario_id" required class="border border-gray-300 rounded px-2 py-1.5 bg-white focus:outline-none focus:border-cyan-600">
+                <option value="" disabled selected>Seleccione un usuario...</option>
+                @foreach ($usuarios as $usuario)
+                    <option value="{{ $usuario->id }}" {{ old('usuario_id') == $usuario->id ? 'selected' : '' }}>
+                        {{ $usuario->dni }} - {{ $usuario->nombre }} {{ $usuario->apellido }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="flex flex-col">
+            <label class="font-semibold text-gray-700 mb-1">Fecha de Entrega *</label>
+            <input type="date" name="fecha_entrega" value="{{ old('fecha_entrega', date('Y-m-d')) }}" required
+                class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:border-cyan-600"/>
+        </div>
+
+        <div class="flex flex-col">
+            <label class="font-semibold text-gray-700 mb-1">Observación</label>
+            <input type="text" name="observacion" placeholder="Ej: Entregado con cargador y maletín" value="{{ old('observacion') }}"
+                class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:border-cyan-600"/>
+        </div>
+        
+        <div class="col-span-2 mt-2">
+            <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-500">
+                Guardar
+            </button>
+        </div>
+    </form>
+@endsection

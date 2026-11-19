@@ -11,15 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-                Schema::create('biens', function (Blueprint $table) {
+        Schema::create('biens', function (Blueprint $table) {
             $table->id();
             $table->string('codigo')->unique();
-            $table->string('descripcion');
+            $table->string('nombre');
+            $table->string('marca')->nullable();
+            $table->string('modelo')->nullable();
             $table->string('estado')->default('Bueno');
             $table->foreignId('categoria_id')->constrained('categorias')->onDelete('cascade');
             $table->foreignId('ubicacion_id')->constrained('ubicacions')->onDelete('cascade');
             $table->timestamps();
         });
+
 
     }
 
