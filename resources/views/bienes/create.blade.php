@@ -70,10 +70,10 @@
         <div class="flex flex-col col-span-2">
             <label class="font-semibold text-gray-700 mb-1">Estado *</label>
             <select name="estado" required class="border border-gray-300 rounded px-2 py-1.5 bg-white focus:outline-none focus:border-cyan-600">
-                <option value="Bueno" {{ old('estado') == 'Bueno' ? 'selected' : '' }}>Bueno</option>
+                <option value="Disponible" {{ old('estado') == 'Disponible' ? 'selected' : '' }}>Disponible</option>
                 <option value="Regular" {{ old('estado') == 'Regular' ? 'selected' : '' }}>Regular</option>
-                <option value="Malo" {{ old('estado') == 'Malo' ? 'selected' : '' }}>Malo</option>
-                <option value="Baja" {{ old('estado') == 'Baja' ? 'selected' : '' }}>Baja</option>
+                <option value="Mantenimiento" {{ old('estado') == 'Mantenimiento' ? 'selected' : '' }}>Mantenimiento</option>
+                <option value="Inoperativo" {{ old('estado') == 'Inoperativo' ? 'selected' : '' }}>Inoperativo</option>
             </select>
         </div>
         
